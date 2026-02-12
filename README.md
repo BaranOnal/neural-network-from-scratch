@@ -62,22 +62,19 @@ If you want to truly understand how neural networks work under the hood, this is
 > Bottom: Training loss curve  
 
 ---
+
 ## Mathematical Overview
 
-The backpropagation core relies on the following gradients for each layer $l$:
-$$
-dW^{[l]} = \frac{1}{m} dZ^{[l]} \cdot (A^{[l-1]})^T
-$$
+For each layer \( l \):
 
-$$
-db^{[l]} = \frac{1}{m} \sum dZ^{[l]}
-$$
+dW[l] = (1/m) · dZ[l] · A[l-1]^T  
+db[l] = (1/m) · sum(dZ[l])  
+dA[l-1] = W[l]^T · dZ[l]
 
-$$
-dA^{[l-1]} = (W^{[l]})^T \cdot dZ^{[l]}
-$$
-For the output layer using Softmax + Categorical Cross-Entropy, the gradient simplifies to:
-$$dZ_{final} = \hat{y} - y$$
+For the final layer (Softmax + CCE):
+
+dZ_final = y_hat - y
+
 ---
 ## Project Structure
 
