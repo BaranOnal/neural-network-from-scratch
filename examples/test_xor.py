@@ -1,4 +1,4 @@
-from layers import *
+from nn.layers import *
 
 X_xor = np.array([[0, 0, 1, 1],
                   [0, 1, 0, 1]])
@@ -14,7 +14,7 @@ model = NeuralNetwork(X_xor, Y_xor, layers_dims,
                       loss_function="binary_crossentropy",
                       learning_rate=0.5)
 
-model.fit(epochs=1000)
+model.fit(epochs=2000)
 
 print("\n--- XOR Training Results ---")
 

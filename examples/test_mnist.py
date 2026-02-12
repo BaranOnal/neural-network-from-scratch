@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.datasets import fetch_openml
 from sklearn.preprocessing import OneHotEncoder
-from layers import NeuralNetwork, plot_training
+from nn.layers import NeuralNetwork, plot_training
 import matplotlib.pyplot as plt
 
 print("MNIST is being downloaded")

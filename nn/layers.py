@@ -1,7 +1,7 @@
 import numpy as np
-import utils
-from nn import activations
-import losses
+from . import utils
+from . import activations
+from . import losses
 
 class NeuralNetwork:
 
