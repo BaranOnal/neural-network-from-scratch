@@ -24,9 +24,12 @@ layers_dims = [784, 128, 64, 10]
 model = NeuralNetwork(X, Y, layers_dims,
                       activation_function="relu",
                       loss_function="categorical_crossentropy",
-                      learning_rate=0.05)
+                      learning_rate=0.01,
+                      initialization="he",
+                      optimizer="Adam"
+                      )
 
-model.fit(epochs=20, batch_size=64)
+model.fit(epochs=30, batch_size=64)
 
 test_pred = model.forward(model.x_test)
 pred_classes = np.argmax(test_pred, axis=0)

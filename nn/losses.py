@@ -10,7 +10,7 @@ class MSE:
     def derivative(self, y, y_hat):
         m = y.shape[1]
 
-        return 2 * (y_hat -y)
+        return (2/m) * (y_hat -y)
 
 
 class BinaryCrossEntropy:
@@ -23,12 +23,8 @@ class BinaryCrossEntropy:
         return cost
 
     def derivative(self, y, y_hat):
-        m = y.shape[1]
-
-        epsilon = 1e-15
-        y_hat = np.clip(y_hat, epsilon, 1 - epsilon)
-        dBce = - (np.divide(y, y_hat) - np.divide(1 - y, 1 - y_hat))
-        return dBce
+        # d(Sigmoid + BinaryCE)  = y_hat - y
+        return y_hat - y
 
 
 class CategoricalCrossEntropy:

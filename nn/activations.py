@@ -8,9 +8,7 @@ class Sigmoid:
         return self.output
 
     def backward(self, dA):
-
-        dZ = dA * (self.output * (1 - self.output))
-        return dZ
+        return dA * self.output * (1 - self.output)
 
 class ReLU:
     def forward(self, x):

@@ -12,9 +12,13 @@ print("--- Model XOR ---")
 model = NeuralNetwork(X_xor, Y_xor, layers_dims,
                       activation_function="relu",
                       loss_function="binary_crossentropy",
-                      learning_rate=0.5)
+                      learning_rate=0.05,
+                      initialization="he",
+                      optimizer="RMSprop",
+                      lambda_ = 0.0001
+                      )
 
-model.fit(epochs=2000)
+model.fit(epochs=1000)
 
 print("\n--- XOR Training Results ---")
 
